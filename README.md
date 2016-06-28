@@ -8,7 +8,7 @@ This webapp requires a simple http server in order to run.   One way to do this,
 using python 3.5 or later:
 
 ```
-cd <this repo directory>
+cd <the directory holding your local copy of this repo>
 python -m http.server 8081
 
 ```
