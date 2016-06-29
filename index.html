@@ -49,10 +49,7 @@
 <body>
    <h1>Independent Farms in the USA</h1>
    <div>
-       <svg xlmns="http://w3.org/2000/svg" viewBox="0 0 960 500" preserveAspectRatio="xMidYMid meet" id='map'> </svg>
-   </div>
-</body>
-
+       <svg xlmns="http://w3.org/2000/svg" viewBox="0 0 960 500" id='map'> </svg>
 
 <script type="text/javascript">
 
@@ -73,7 +70,7 @@ var color = d3.scale.threshold()
     	    
 
 
-var div = d3.select("#map").append("div")
+var div = d3.select("body").append("div")
             .attr("class", "tooltip")
             .style("opacity", 0);
  
@@ -146,6 +143,8 @@ legend.append("text")
       .attr("x", 50)
       .attr("y", function(d, i){ return height - (i*ls_h) - ls_h - 4;})
       .text(function(d, i){ return legend_labels[i]; });
- 
+
 </script>
+   </div>
+   </body>
 </html>
