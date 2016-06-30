@@ -1,0 +1,77 @@
+<html>
+<head>
+ <title> two boxes, will they resize?</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<style>
+
+
+#outermostDiv{
+  border-style: solid;
+  margin: 10px;
+  height: 95%;
+  }
+
+#leftDiv{
+  background-color: #FFE0E0;
+  width: 100%;
+  height: 100%
+  }
+
+#rightDiv{
+  background-color: #E0E0FF;
+  width: 100%;
+  height: 100%
+  }
+  
+</style>
+
+<script>
+var leftDiv;
+var button;
+<!------------------------------------------------------------------------------------------------------>
+$(document ).ready(function(){
+
+    console.log("ready!");
+    $(window).resize(handleWindowResize);
+    leftDiv = $("#leftDiv");
+    button = $("#myButton");
+    button.click(handleButtonClick);
+});
+<!------------------------------------------------------------------------------------------------------>
+function handleWindowResize(event)
+{
+   var newWidth = window.innerWidth;
+   var newHeight = window.innerHeight
+   console.log("handelWindowResize function called: " + newWidth + ", " + newHeight);
+   leftDiv.width(newWidth/3);
+   
+} // handleWindowResize
+<!------------------------------------------------------------------------------------------------------>
+function handleButtonClick(event)
+{
+   console.log("click!")
+   
+} // handleButtonClick
+<!------------------------------------------------------------------------------------------------------>
+</script>
+</head>
+
+<body>
+
+<div id="outermostDiv">
+  <button id="myButton"></button>
+  <table style="width:100%; height: 100%">
+    <tr>
+      <td style="width:50%">
+        <div id="leftDiv"> left </div>
+      </td>
+      <td style="width:50%">
+        <div id="rightDiv"> right</div>
+      </td>
+      </tr>
+  </table>
+
+</div>
+
+</body>
+</html>
